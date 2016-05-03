@@ -1,58 +1,44 @@
 class LeadsController < ApplicationController
   before_action :set_lead, only: [:show, :edit, :update, :destroy]
 
-  # GET /leads
   def index
     @leads = Lead.all
   end
 
-  # GET /leads/1
-  def show
-  end
+  def show; end
 
-  # GET /leads/new
   def new
     @lead = Lead.new
   end
 
-  # GET /leads/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /leads
   def create
     @lead = Lead.new(lead_params)
+    @lead.save
 
-    if @lead.save
-      redirect_to @lead, notice: 'Lead was successfully created.'
-    else
-      render :new
-    end
+    respond_with @lead, location: leads_path
   end
 
-  # PATCH/PUT /leads/1
   def update
-    if @lead.update(lead_params)
-      redirect_to @lead, notice: 'Lead was successfully updated.'
-    else
-      render :edit
-    end
+    @lead.update(lead_params)
+
+    respond_with @lead, location: leads_path
   end
 
-  # DELETE /leads/1
   def destroy
     @lead.destroy
-    redirect_to leads_url, notice: 'Lead was successfully destroyed.'
+
+    respond_with @lead, location: leads_path
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_lead
-      @lead = Lead.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def lead_params
-      params.require(:lead).permit(:name, :email, :phone, :city, :state, :country, :status)
-    end
+  def set_lead
+    @lead = Lead.find(params[:id])
+  end
+
+  def lead_params
+    params.require(:lead).permit(:name, :email, :phone, :city, :state, :country, :status)
+  end
 end

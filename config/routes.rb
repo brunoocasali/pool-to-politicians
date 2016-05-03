@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
   devise_for :users
 
   authenticated :user do
-    root 'leads#index', as: :authenticated_root
+    root 'welcome#index', as: :authenticated_root
   end
 
   resources :leads
