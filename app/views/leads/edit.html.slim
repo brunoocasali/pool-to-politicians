@@ -1,8 +1,7 @@
-h1 Editing lead
+h1
+ = t('edit', m: tm(Lead))
+ = link_to t('back'), leads_path, class: 'btn btn-default pull-right'
+ = link_to t('show_btn'), @lead, class: 'btn btn-primary pull-right'
 
 == render 'form'
-
-= link_to 'Show', @lead
-'|
-= link_to 'Back', leads_path
 

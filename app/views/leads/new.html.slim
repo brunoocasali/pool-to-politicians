@@ -1,5 +1,6 @@
-h1 New lead
+h1
+  = t('new', m: tm(Lead))
 
 == render 'form'
 
-= link_to 'Back', leads_path
+= link_to t('back'), leads_path

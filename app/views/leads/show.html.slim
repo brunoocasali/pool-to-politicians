@@ -1,4 +1,6 @@
-p#notice = notice
+h1
+  = t('show', m: tm(Lead), id: @lead.id)
+br
 
 p
   strong Name:
@@ -22,6 +24,5 @@ p
   strong Status:
   = @lead.status
 
-= link_to 'Edit', edit_lead_path(@lead)
-'|
-= link_to 'Back', leads_path
+= link_to t('edit', m: tm(Lead)), edit_lead_path(@lead), class: 'btn btn-primary'
+= link_to t('back'), leads_path, class: 'btn btn-default'

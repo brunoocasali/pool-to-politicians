@@ -4,11 +4,11 @@
   .form-inputs
     = f.input :name
     = f.input :email
-    = f.input :phone
-    = f.input :city, as: :select
+    = f.input :city
     = f.input :state
     = f.input :country
-    = f.input :status
+    = f.input :phone
+    = f.input :status, collection: CommonStatus.to_a
 
   .form-actions
     = f.button :submit

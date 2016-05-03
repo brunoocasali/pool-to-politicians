@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    models:
+      lead:
+        one: Lead
+        other: Leads
+    attributes:
+      lead:
+        name: Nome
+        email: Email
+        phone: Telefone
+        city: Cidade
+        state: Estado
+        country: País
+        status: Situação

@@ -1,15 +1,18 @@
-h1 Listing leads
+h1
+  = t('list', m: tmp(Lead))
+  = link_to t('new', m: tm(Lead)), new_lead_path, class: 'btn btn-primary pull-right'
 
-table
+
+table.table
   thead
     tr
-      th Name
-      th Email
-      th Phone
-      th City
-      th State
-      th Country
-      th Status
+      th = ta(Lead, :name)
+      th = ta(Lead, :email)
+      th = ta(Lead, :phone)
+      th = ta(Lead, :city)
+      th = ta(Lead, :state)
+      th = ta(Lead, :country)
+      th = ta(Lead, :status)
       th
       th
       th
@@ -23,11 +26,7 @@ table
         td = lead.city
         td = lead.state
         td = lead.country
-        td = lead.status
-        td = link_to 'Show', lead
-        td = link_to 'Edit', edit_lead_path(lead)
-        td = link_to 'Destroy', lead, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Lead', new_lead_path
+        td = lead.status_humanize
+        td = link_to t('show_btn'), lead
+        td = link_to t('edit_btn'), edit_lead_path(lead)
+        td = link_to t('destroy'), lead, data: { confirm: 'Are you sure?' }, method: :delete
