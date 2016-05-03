@@ -8,6 +8,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 
+gem 'simple_form'
+gem 'slim-rails'
+
 gem 'devise'
 gem 'carrierwave', '0.10.0'
 gem 'kaminari'
