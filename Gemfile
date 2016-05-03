@@ -12,6 +12,8 @@ gem 'turbolinks'
 gem 'simple_form'
 gem 'slim-rails'
 
+gem 'country_select'
+
 gem 'quiet_assets'
 gem 'bootstrap-sass', '3.1.0'
 gem "twitter-bootstrap-rails"
