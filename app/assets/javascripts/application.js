@@ -18,5 +18,5 @@
 
 
 $('#bootstrap-alert').fadeTo(2000, 500).slideUp(500, function(){
-  // $('#bootstrap-alert').alert('close');
+  $('#bootstrap-alert').alert('close');
 });

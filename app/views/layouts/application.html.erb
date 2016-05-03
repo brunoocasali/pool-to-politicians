@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pooliticos</title>
+  <title>Pooliticos - <%= controller_name.capitalize %></title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= favicon_link_tag 'icon.png' %>
   <%= csrf_meta_tags %>
@@ -10,7 +10,7 @@
   <nav class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           <%= image_tag 'brand.png', alt: 'Logo' %>
         </a>
       </div>
@@ -36,6 +36,11 @@
     <%= notices %>
     <%= yield %>
   </div>
+  <footer class="footer">
+    <div class="container">
+      <p class="text-muted">Copyright © 2016</p>
+    </div>
+  </footer>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
