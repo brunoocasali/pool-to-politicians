@@ -1,0 +1,27 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @lead.name
+p
+  strong Email:
+  = @lead.email
+p
+  strong Phone:
+  = @lead.phone
+p
+  strong City:
+  = @lead.city
+p
+  strong State:
+  = @lead.state
+p
+  strong Country:
+  = @lead.country
+p
+  strong Status:
+  = @lead.status
+
+= link_to 'Edit', edit_lead_path(@lead)
+'|
+= link_to 'Back', leads_path

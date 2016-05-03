@@ -14,6 +14,7 @@ gem 'slim-rails'
 
 gem 'quiet_assets'
 gem 'bootstrap-sass', '3.1.0'
+gem "twitter-bootstrap-rails"
 
 gem 'devise'
 gem 'devise-i18n'
