@@ -7,7 +7,6 @@ gem 'pg', '~> 0.15'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'sass-rails'
-gem 'turbolinks'
 
 gem 'simple_form'
 gem 'slim-rails'
@@ -22,6 +21,10 @@ gem "animate-rails"
 gem 'jquery-easing-rails'
 gem 'wow-rails'
 gem 'fittextjs_rails'
+
+group :assets do
+  gem 'coffee-rails'
+end
 
 gem 'devise'
 gem 'devise-i18n'

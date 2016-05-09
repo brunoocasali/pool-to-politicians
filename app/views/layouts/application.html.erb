@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Pooliticos - <%= controller_name.capitalize %></title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-0UBL8wxZ28kqJ8w8N8RUV0odBG5w8D/Y+rb+o7hr2F3dS9twlAE8S7VUtVSRe5cc" crossorigin="anonymous">
   <%= favicon_link_tag 'icon.png' %>
   <%= csrf_meta_tags %>
@@ -42,6 +42,6 @@
       <p class="text-muted">Copyright © 2016</p>
     </div>
   </footer>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
 </body>
 </html>
