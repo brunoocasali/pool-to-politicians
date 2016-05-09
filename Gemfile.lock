@@ -36,6 +36,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    animate-rails (1.0.10)
+      rails
     arel (6.0.3)
     bcrypt (3.1.11)
     bootstrap-sass (3.1.0.0)
@@ -76,10 +78,16 @@ GEM
       activesupport (>= 3.0.0)
     erubis (2.7.0)
     execjs (2.6.0)
+    fittextjs_rails (1.2.0.1)
+      railties (>= 3.1)
+    font-awesome-rails (4.6.2.0)
+      railties (>= 3.2, < 5.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
     i18n_data (0.7.0)
+    jquery-easing-rails (0.0.2)
+      railties (>= 3.1.0)
     jquery-rails (4.1.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -204,11 +212,13 @@ GEM
     unicode_utils (1.4.0)
     warden (1.2.6)
       rack (>= 1.0)
+    wow-rails (0.0.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  animate-rails
   bootstrap-sass (= 3.1.0)
   carrierwave (= 0.10.0)
   country_select
@@ -216,6 +226,9 @@ DEPENDENCIES
   devise-bootstrap-views
   devise-i18n
   enumerate_it
+  fittextjs_rails
+  font-awesome-rails
+  jquery-easing-rails
   jquery-rails
   kaminari
   mini_magick
@@ -233,6 +246,7 @@ DEPENDENCIES
   turbolinks
   twitter-bootstrap-rails
   uglifier (>= 1.3.0)
+  wow-rails
 
 BUNDLED WITH
    1.11.2

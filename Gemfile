@@ -17,6 +17,11 @@ gem 'country_select'
 gem 'quiet_assets'
 gem 'bootstrap-sass', '3.1.0'
 gem "twitter-bootstrap-rails"
+gem "font-awesome-rails"
+gem "animate-rails"
+gem 'jquery-easing-rails'
+gem 'wow-rails'
+gem 'fittextjs_rails'
 
 gem 'devise'
 gem 'devise-i18n'

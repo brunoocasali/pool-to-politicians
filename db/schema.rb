@@ -11,10 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503041513) do
+ActiveRecord::Schema.define(version: 20160509141244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "configurations", force: :cascade do |t|
+    t.string   "from_email"
+    t.integer  "plan_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "configurations", ["plan_id"], name: "index_configurations_on_plan_id", using: :btree
+
+  create_table "delivery_contents", force: :cascade do |t|
+    t.integer  "group_id"
+    t.integer  "medium_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "delivery_contents", ["group_id"], name: "index_delivery_contents_on_group_id", using: :btree
+  add_index "delivery_contents", ["medium_id"], name: "index_delivery_contents_on_medium_id", using: :btree
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "status"
+    t.integer  "configuration_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "groups", ["configuration_id"], name: "index_groups_on_configuration_id", using: :btree
 
   create_table "leads", force: :cascade do |t|
     t.string   "name"
@@ -26,9 +56,27 @@ ActiveRecord::Schema.define(version: 20160503041513) do
     t.integer  "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "group_id"
   end
 
+  add_index "leads", ["group_id"], name: "index_leads_on_group_id", using: :btree
   add_index "leads", ["status"], name: "index_leads_on_status", using: :btree
+
+  create_table "media", force: :cascade do |t|
+    t.string   "filename"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.decimal  "price",       precision: 10, scale: 2
+    t.integer  "status"
+    t.integer  "kind"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -48,4 +96,9 @@ ActiveRecord::Schema.define(version: 20160503041513) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "configurations", "plans"
+  add_foreign_key "delivery_contents", "groups"
+  add_foreign_key "delivery_contents", "media"
+  add_foreign_key "groups", "configurations"
+  add_foreign_key "leads", "groups"
 end

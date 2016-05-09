@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
 
   protect_from_forgery with: :exception
-  before_action :authenticate_user!, unless: :devise_controller?
+  before_action :authenticate_user!, unless: 'devise_controller? || home_page?'
 
   layout :layout_by_resource
 
@@ -12,9 +12,15 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def home_page?
+    controller_name.eql?('home')
+  end
+
   def layout_by_resource
     if devise_controller?
       'devise'
+    elsif home_page?
+      'home_page'
     else
       'application'
     end

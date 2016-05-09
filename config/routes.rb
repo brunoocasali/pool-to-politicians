@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  resources :delivery_contents
-  resources :media
-  resources :groups
-  resources :configurations
-  resources :plans
+  get 'home/index'
   get 'welcome/index'
 
   devise_for :users
@@ -13,6 +9,11 @@ Rails.application.routes.draw do
   end
 
   resources :leads
+  resources :delivery_contents
+  resources :media
+  resources :groups
+  resources :configurations
+  resources :plans
 
-  root to: redirect('/users/sign_in')
+  root 'home#index' # to: redirect('/users/sign_in')
 end
