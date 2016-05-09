@@ -1,0 +1,9 @@
+= simple_form_for(@configuration) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :from_email
+    = f.association :plan
+
+  .form-actions
+    = f.button :submit

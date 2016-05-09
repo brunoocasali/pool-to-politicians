@@ -1,0 +1,23 @@
+h1 Listing delivery_contents
+
+table
+  thead
+    tr
+      th Group
+      th Medium
+      th
+      th
+      th
+
+  tbody
+    - @delivery_contents.each do |delivery_content|
+      tr
+        td = delivery_content.group
+        td = delivery_content.medium
+        td = link_to 'Show', delivery_content
+        td = link_to 'Edit', edit_delivery_content_path(delivery_content)
+        td = link_to 'Destroy', delivery_content, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Delivery content', new_delivery_content_path

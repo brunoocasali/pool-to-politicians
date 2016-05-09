@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Group:
+  = @delivery_content.group
+p
+  strong Medium:
+  = @delivery_content.medium
+
+= link_to 'Edit', edit_delivery_content_path(@delivery_content)
+'|
+= link_to 'Back', delivery_contents_path

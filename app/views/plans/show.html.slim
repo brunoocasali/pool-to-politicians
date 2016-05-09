@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @plan.name
+p
+  strong Description:
+  = @plan.description
+p
+  strong Price:
+  = @plan.price
+p
+  strong Status:
+  = @plan.status
+p
+  strong Kind:
+  = @plan.kind
+
+= link_to 'Edit', edit_plan_path(@plan)
+'|
+= link_to 'Back', plans_path

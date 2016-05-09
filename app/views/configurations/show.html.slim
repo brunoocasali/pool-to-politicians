@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong From email:
+  = @configuration.from_email
+p
+  strong Plan:
+  = @configuration.plan
+
+= link_to 'Edit', edit_configuration_path(@configuration)
+'|
+= link_to 'Back', configurations_path
