@@ -15,9 +15,9 @@ gem 'country_select'
 
 gem 'quiet_assets'
 gem 'bootstrap-sass', '3.1.0'
-gem "twitter-bootstrap-rails"
-gem "font-awesome-rails"
-gem "animate-rails"
+gem 'twitter-bootstrap-rails'
+gem 'font-awesome-rails'
+gem 'animate-rails'
 gem 'jquery-easing-rails'
 gem 'wow-rails'
 gem 'fittextjs_rails'
@@ -30,8 +30,8 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'devise-bootstrap-views'
 
-gem 'carrierwave', '0.10.0'
-gem 'kaminari'
+gem 'cloudinary'
+
 gem 'enumerate_it'
 gem 'responders'
 gem 'mini_magick'
@@ -39,7 +39,8 @@ gem 'mini_magick'
 gem 'passenger'
 
 group :development do
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Spring speeds up development by keeping your application running in the background.
+  # Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
