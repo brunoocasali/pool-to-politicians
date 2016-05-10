@@ -1,8 +1,6 @@
 class DeliveryContentsController < ApplicationController
   before_action :set_delivery_content, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
-
   def index
     @delivery_contents = DeliveryContent.all
     respond_with(@delivery_contents)

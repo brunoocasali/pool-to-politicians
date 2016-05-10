@@ -1,8 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
-
   def index
     @groups = Group.all
 

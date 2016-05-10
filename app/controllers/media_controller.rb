@@ -1,8 +1,6 @@
 class MediaController < ApplicationController
   before_action :set_medium, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
-
   def index
     @media = Medium.all
     respond_with(@media)

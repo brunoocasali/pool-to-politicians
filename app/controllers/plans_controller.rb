@@ -1,8 +1,6 @@
 class PlansController < ApplicationController
   before_action :set_plan, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
-
   def index
     @plans = Plan.all
 

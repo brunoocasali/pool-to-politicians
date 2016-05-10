@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    meta[charset="utf-8"]
+    meta[http-equiv="X-UA-Compatible" content="IE=edge"]
+    meta[name="viewport" content="width=device-width, initial-scale=1"]
+    meta[name="description" content=""]
+    meta[name="author" content=""]
+    title
+      | Pooliticos
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    link[href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-0UBL8wxZ28kqJ8w8N8RUV0odBG5w8D/Y+rb+o7hr2F3dS9twlAE8S7VUtVSRe5cc" crossorigin="anonymous"]
+    = favicon_link_tag 'icon.png'
+    = csrf_meta_tags
+    link[href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"]
+    link[href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css"]
+    = stylesheet_link_tag 'creative'
+  body#page-top
+    = yield
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'creative'

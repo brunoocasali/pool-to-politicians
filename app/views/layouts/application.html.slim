@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    title
+      | Pooliticos - 
+      = controller_name.capitalize
+    = stylesheet_link_tag 'application', media: 'all'
+    link[href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-0UBL8wxZ28kqJ8w8N8RUV0odBG5w8D/Y+rb+o7hr2F3dS9twlAE8S7VUtVSRe5cc" crossorigin="anonymous"]
+    = favicon_link_tag 'icon.png'
+    = csrf_meta_tags
+  body
+    nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        .navbar-header
+          a.navbar-brand[href="/"]
+            = image_tag 'brand-white.png', alt: 'Logo'
+        ul.nav.navbar-nav
+          |  <li class="nav-item 
+          = active_class(root_path)
+          | "> 
+        a.nav-link[href="/"]
+          | Home
+        |  <li class="nav-item 
+        = active_class('leads')
+        | "> 
+        a.nav-link[href="/leads"]
+          | Leads
+        |  <ul class="nav navbar-nav pull-right 
+        = active_class(edit_user_registration_path)
+        | "> 
+      li.nav-item
+        a.nav-link[href="/users/edit"]
+          | Perfil
+      li.nav-item
+        = link_to('Sair', destroy_user_session_path, method: :delete)
+    .container
+      = notices
+      = yield
+    footer.footer
+      .container
+        p.text-muted
+          | Copyright © 2016
+    = javascript_include_tag 'application'

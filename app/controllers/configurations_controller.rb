@@ -1,8 +1,6 @@
 class ConfigurationsController < ApplicationController
   before_action :set_configuration, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
-
   def index
     @configurations = Configuration.all
     respond_with(@configurations)
