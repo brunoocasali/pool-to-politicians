@@ -32,6 +32,7 @@ gem 'devise-i18n'
 gem 'devise-bootstrap-views'
 
 gem 'cloudinary'
+gem 'carrierwave'
 
 gem 'enumerate_it'
 gem 'responders'
