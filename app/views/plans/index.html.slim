@@ -1,29 +1,29 @@
-h1 Listing plans
+h2
+  = t('list', m: tmp(Plan))
+  = link_to t('new', m: tm(Plan)), new_lead_path, class: 'btn btn-primary pull-right'
 
-table
+table.table
   thead
     tr
-      th Name
-      th Description
-      th Price
-      th Status
-      th Kind
+      th = ta(Plan, :name)
+      th = ta(Plan, :description)
+      th = ta(Plan, :price)
+      th = ta(Plan, :status)
+      th = ta(Plan, :kind)
+      th = ta(Plan, :country)
+      th = ta(Plan, :status)
       th
       th
       th
 
   tbody
-    - @plans.each do |plan|
+    - @leads.each do |plan|
       tr
         td = plan.name
         td = plan.description
         td = plan.price
-        td = plan.status
+        td = plan.status_humanize
         td = plan.kind
-        td = link_to 'Show', plan
-        td = link_to 'Edit', edit_plan_path(plan)
-        td = link_to 'Destroy', plan, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Plan', new_plan_path
+        td = link_to t('show_btn'), plan
+        td = link_to t('edit_btn'), edit_plan_path(plan)
+        td = link_to t('destroy'), plan, data: { confirm: 'Você tem certeza?' }, method: :delete

@@ -2,7 +2,6 @@ h2
   = t('list', m: tmp(Lead))
   = link_to t('new', m: tm(Lead)), new_lead_path, class: 'btn btn-primary pull-right'
 
-
 table.table
   thead
     tr
@@ -29,4 +28,4 @@ table.table
         td = lead.status_humanize
         td = link_to t('show_btn'), lead
         td = link_to t('edit_btn'), edit_lead_path(lead)
-        td = link_to t('destroy'), lead, data: { confirm: 'Are you sure?' }, method: :delete
+        td = link_to t('destroy'), lead, data: { confirm: 'Você tem certeza?' }, method: :delete
