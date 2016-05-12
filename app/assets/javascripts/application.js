@@ -16,6 +16,7 @@
 //= require jquery.easing
 //= require wow
 //= require fittext
+//= require image-picker
 //= require_tree .
 
 
