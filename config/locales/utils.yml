@@ -7,3 +7,4 @@ pt-BR:
   show_btn: 'Detalhes'
   edit_btn: 'Editar'
   destroy: 'Excluir'
+  not_found: 'Nenhum item foi encontrado!'

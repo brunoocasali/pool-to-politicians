@@ -16,6 +16,8 @@ module NoticeManagerHelper
       'success'
     when 'alert'
       'danger'
+    when 'warning'
+      'warning'
     end
   end
 end

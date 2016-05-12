@@ -2,6 +2,9 @@ h2
   = t('list', m: tmp(Lead))
   = link_to t('new', m: tm(Lead)), new_lead_path, class: 'btn btn-primary pull-right'
 
+= paginate @leads
+= empty_list_message @leads
+
 table.table
   thead
     tr
@@ -12,9 +15,7 @@ table.table
       th = ta(Lead, :state)
       th = ta(Lead, :country)
       th = ta(Lead, :status)
-      th
-      th
-      th
+      th(colspan="3")
 
   tbody
     - @leads.each do |lead|
@@ -29,3 +30,5 @@ table.table
         td = link_to t('show_btn'), lead
         td = link_to t('edit_btn'), edit_lead_path(lead)
         td = link_to t('destroy'), lead, data: { confirm: 'Você tem certeza?' }, method: :delete
+
+= paginate @leads
