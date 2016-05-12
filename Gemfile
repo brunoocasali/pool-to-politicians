@@ -22,6 +22,7 @@ gem 'jquery-easing-rails'
 gem 'wow-rails'
 gem 'fittextjs_rails'
 gem 'compass-rails'
+gem 'image-picker-rails'
 
 gem 'kaminari'
 
