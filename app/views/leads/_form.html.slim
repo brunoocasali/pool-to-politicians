@@ -2,13 +2,24 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :name
-    = f.input :email
-    = f.input :city
-    = f.input :state
-    = f.input :country
-    = f.input :phone
-    = f.input :status, collection: CommonStatus.to_a
+    .row
+      .form-group.col-sm-6
+        = f.input :name
+      .form-group.col-sm-6
+        = f.input :email
+    .row
+      .form-group.col-sm-4
+        = f.input :city
+      .form-group.col-sm-4
+        = f.input :state
+      .form-group.col-sm-4
+        = f.input :country
+
+    .row
+      .form-group.col-sm-6
+        = f.input :phone
+      .form-group.col-sm-6
+        = f.input :status, collection: CommonStatus.to_a
 
   .form-actions
     = f.button :submit

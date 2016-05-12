@@ -1,5 +1,5 @@
-h1 = t('new', m: tm(Lead))
+h2
+ = t('new', m: tm(Lead))
+ = link_to t('back'), leads_path, class: 'btn btn-default pull-right'
 
 == render 'form'
-
-= link_to t('back'), leads_path
