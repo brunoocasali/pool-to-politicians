@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160509141244) do
+ActiveRecord::Schema.define(version: 20160512055336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160509141244) do
     t.integer  "medium_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "action_url"
   end
 
   add_index "delivery_contents", ["group_id"], name: "index_delivery_contents_on_group_id", using: :btree

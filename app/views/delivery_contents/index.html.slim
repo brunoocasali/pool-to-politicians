@@ -1,23 +1,25 @@
-h1 Listing delivery_contents
+h2
+  = t('list', m: tmp(DeliveryContent))
+  = link_to t('new', m: tm(DeliveryContent)), new_delivery_content_path, class: 'btn btn-primary pull-right'
 
-table
+= paginate @delivery_contents
+= empty_list_message @delivery_contents
+
+table.table
   thead
     tr
-      th Group
-      th Medium
-      th
-      th
-      th
+      th = ta(DeliveryContent, :medium)
+      th = ta(DeliveryContent, :group)
+      th = ta(DeliveryContent, :action_url)
+      th(colspan="2")
 
   tbody
     - @delivery_contents.each do |delivery_content|
       tr
-        td = delivery_content.group
-        td = delivery_content.medium
-        td = link_to 'Show', delivery_content
-        td = link_to 'Edit', edit_delivery_content_path(delivery_content)
-        td = link_to 'Destroy', delivery_content, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td(width=1) = image_tag delivery_content.medium.filename.thumb.url
+        td = delivery_content.group.name
+        td = delivery_content.action_url
+        td(width=1) = link_to t('edit_btn'), edit_delivery_content_path(delivery_content)
+        td(width=1) = link_to t('destroy'), delivery_content, data: { confirm: 'Você tem certeza?' }, method: :delete
 
-br
-
-= link_to 'New Delivery content', new_delivery_content_path
+= paginate @delivery_contents

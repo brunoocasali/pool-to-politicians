@@ -25,6 +25,6 @@ $('#bootstrap-alert').fadeTo(2000, 500).slideUp(500, function(){
 });
 
 $('.image-picker').imagepicker({
-  hide_select : false,
-  show_label  : true
+  hide_select : true,
+  show_label  : false
 })

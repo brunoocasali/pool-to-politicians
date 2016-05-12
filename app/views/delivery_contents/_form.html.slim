@@ -2,9 +2,14 @@
   = f.error_notification
 
   .form-inputs
-    = f.association :group
-
-    = f.input :medium, collection: Proc.new { Medium.all.map { |p| [p, p.id, data: { 'img-label' => p, 'img-src' => p.filename.thumb.url }] } }, input_html: { class: 'image-picker' }
+    .row
+      .form-group.col-sm-6
+        = f.association :group
+      .form-group.col-sm-6
+        = f.input :action_url, as: :url
+    .row
+      .form-group.col-sm-12
+        = f.association :medium, collection: Proc.new { Medium.all.map { |p| [p, p.id, data: { 'img-label' => p, 'img-src' => p.filename.thumb.url }] } }, input_html: { class: 'image-picker' }
 
   .form-actions
     = f.button :submit

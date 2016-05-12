@@ -10,13 +10,14 @@ table.table
     tr
       th = ta(Medium, :thumbnail)
       th = ta(Medium, :filename)
-      th(colspan="3")
+      th(colspan="2")
 
   tbody
     - @media.each do |medium|
       tr
-        td(width=1) = image_tag medium.filename_url, width: 120
+        td(width=1) = image_tag medium.filename.thumb.url
         td = medium
-        td = link_to t('destroy'), medium, data: { confirm: 'Você tem certeza?' }, method: :delete
+        td(width=1) = link_to t('edit_btn'), edit_medium_path(medium)
+        td(width=1) = link_to t('destroy'), medium, data: { confirm: 'Você tem certeza?' }, method: :delete
 
 = paginate @media

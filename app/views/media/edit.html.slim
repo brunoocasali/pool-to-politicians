@@ -1,8 +1,5 @@
-h1 Editing medium
+h2
+ = t('edit', m: tm(Medium))
+ = link_to t('back'), media_path, class: 'btn btn-default pull-right'
 
 == render 'form'
-
-= link_to 'Show', @medium
-'|
-= link_to 'Back', media_path
-
