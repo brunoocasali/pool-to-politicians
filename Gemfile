@@ -23,6 +23,8 @@ gem 'wow-rails'
 gem 'fittextjs_rails'
 gem 'compass-rails'
 
+gem 'kaminari'
+
 group :assets do
   gem 'coffee-rails'
 end
