@@ -2,7 +2,7 @@ class DeliveryContentsController < ApplicationController
   before_action :set_delivery_content, only: [:show, :edit, :update, :destroy]
 
   def index
-    @delivery_contents = DeliveryContent.all
+    @delivery_contents = DeliveryContent.page(params[:page])
     respond_with(@delivery_contents)
   end
 
