@@ -1,21 +1,22 @@
-h1 Listing media
+h2
+  = t('list', m: tmp(Medium))
+  = link_to t('new_a', m: tm(Medium)), new_medium_path, class: 'btn btn-primary pull-right'
 
-table
+= paginate @media
+= empty_list_message @media
+
+table.table
   thead
     tr
-      th Filename
-      th
-      th
-      th
+      th = ta(Medium, :thumbnail)
+      th = ta(Medium, :filename)
+      th(colspan="3")
 
   tbody
     - @media.each do |medium|
       tr
-        td = medium.filename
-        td = link_to 'Show', medium
-        td = link_to 'Edit', edit_medium_path(medium)
-        td = link_to 'Destroy', medium, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td(width=1) = image_tag medium.filename_url, width: 120
+        td = File.basename(medium.filename.path)
+        td = link_to t('destroy'), medium, data: { confirm: 'Você tem certeza?' }, method: :delete
 
-br
-
-= link_to 'New Medium', new_medium_path
+= paginate @media

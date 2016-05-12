@@ -2,7 +2,10 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :filename
+    .row
+      .form-group.col-sm-6
+        = f.input :filename do
+          = f.file_field :filename
 
   .form-actions
     = f.button :submit
