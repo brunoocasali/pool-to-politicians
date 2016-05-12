@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      medium:
+        one: Mídia
+        other: Mídias
+    attributes:
+      medium:
+        filename: Nome do Arquivo
+        thumbnail: Preview

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :leads
   resources :delivery_contents
-  resources :media
+  resources :media, except: :show
   resources :groups
   resources :configurations
   resources :plans
