@@ -23,3 +23,8 @@
 $('#bootstrap-alert').fadeTo(2000, 500).slideUp(500, function(){
   $('#bootstrap-alert').alert('close');
 });
+
+$('.image-picker').imagepicker({
+  hide_select : false,
+  show_label  : true
+})

@@ -16,7 +16,7 @@ table.table
     - @media.each do |medium|
       tr
         td(width=1) = image_tag medium.filename_url, width: 120
-        td = File.basename(medium.filename.path)
+        td = medium
         td = link_to t('destroy'), medium, data: { confirm: 'Você tem certeza?' }, method: :delete
 
 = paginate @media

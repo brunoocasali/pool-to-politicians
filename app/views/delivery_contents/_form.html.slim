@@ -3,7 +3,8 @@
 
   .form-inputs
     = f.association :group
-    = f.association :medium
+
+    = f.input :medium, collection: Proc.new { Medium.all.map { |p| [p, p.id, data: { 'img-label' => p, 'img-src' => p.filename.thumb.url }] } }, input_html: { class: 'image-picker' }
 
   .form-actions
     = f.button :submit
