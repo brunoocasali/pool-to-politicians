@@ -247,6 +247,12 @@ header {
   }
 }
 
+.start-now {
+  &:hover {
+    background-color: #C5BEBB !important;
+  }
+}
+
 .section-heading {
   margin-top: 0;
 }
