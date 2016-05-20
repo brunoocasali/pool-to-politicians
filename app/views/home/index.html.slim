@@ -94,36 +94,16 @@ aside.bg-dark
 section#plans.no-padding.bg-dark
   .container-fluid
     .promos
-      .promo.first
-        h4 Básico
-        ul.features
-          li.brief Acesso Limitado
-          li.price R$ 69,00
-          li Some great feature
-          li Another super feature
-          li And more...
-          li.buy
-            = link_to 'Compre agora!', new_user_registration_path, class: 'btn btn-primary btn-md wow tada'
-      .promo.third.scale
-        h4 Premium
-        ul.features
-          li.brief Somente o céu é o limite!
-          li.price R$ 89,00
-          li Some great feature
-          li Another super feature
-          li And more...
-          li.buy
-            = link_to 'Compre agora!', new_user_registration_path, class: 'btn btn-primary btn-md wow tada'
-      .promo.second
-        h4 Plus
-        ul.features
-          li.brief Envie quanto puder!
-          li.price R$ 79,00
-          li Some great feature
-          li Another super feature
-          li And more...
-          li.buy
-            = link_to 'Compre agora!', new_user_registration_path, class: 'btn btn-primary btn-md wow tada'
+      - @plans.each do |plan|
+        .promo class=('scale' if plan.featured?)
+          h4 = plan.name
+          ul.features
+            li.brief = plan.subtitle
+            li.price = number_to_currency(plan.price)
+            - plan.description.split("\n").each do |item|
+              = content_tag(:li, item)
+            li.buy
+              = link_to 'Compre agora!', new_user_registration_path(plan_id: plan.id), class: 'btn btn-primary btn-md wow tada'
 
 aside.bg-dark
 

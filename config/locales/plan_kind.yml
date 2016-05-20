@@ -1,0 +1,5 @@
+pt-BR:
+  enumerations:
+    plan_kind:
+      per_email: "Por Email"
+      per_month: "Por Mês"
