@@ -99,7 +99,9 @@ section#plans.no-padding.bg-dark
           h4 = plan.name
           ul.features
             li.brief = plan.subtitle
-            li.price = number_to_currency(plan.price)
+            li.price
+              = "#{number_to_currency(plan.price)} <small style='font-size: 10px'>#{plan.kind_humanize.downcase!}</small>".html_safe
+
             - plan.description.split("\n").each do |item|
               = content_tag(:li, item)
             li.buy
