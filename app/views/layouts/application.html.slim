@@ -1,7 +1,9 @@
 doctype html
 html
   head
-    title = "Pooliticos - #{controller_name.capitalize}"
+    title
+      = "Administração: #{t("#{controller_name.underscore}.title")}"
+
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     link[href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-0UBL8wxZ28kqJ8w8N8RUV0odBG5w8D/Y+rb+o7hr2F3dS9twlAE8S7VUtVSRe5cc" crossorigin="anonymous"]
     = favicon_link_tag 'icon.png'
