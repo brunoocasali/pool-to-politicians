@@ -8,11 +8,12 @@ Rails.application.routes.draw do
     root 'welcome#index', as: :authenticated_root
   end
 
-  resources :leads
-  resources :delivery_contents
-  resources :media, except: :show
-  resources :groups
   resources :configurations
+  resources :deliveries
+  resources :delivery_contents
+  resources :groups
+  resources :leads
+  resources :media, except: :show
   resources :plans
 
   root 'home#index' # to: redirect('/users/sign_in')
