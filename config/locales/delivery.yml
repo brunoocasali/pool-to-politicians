@@ -1,0 +1,13 @@
+pt-BR:
+  activerecord:
+    models:
+      delivery:
+        one: Envio
+        other: Envios
+    attributes:
+      delivery:
+        delivery_content: Conteúdo para Entrega
+        leads: Leads
+        city: Cidade
+        state: Estado
+
