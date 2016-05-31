@@ -1,14 +1,10 @@
 class DeliveryContentsController < ApplicationController
-  before_action :set_delivery_content, only: [:show, :edit, :update, :destroy]
+  before_action :set_delivery_content, only: [:edit, :update, :destroy]
 
   def index
     @delivery_contents = DeliveryContent.page(params[:page])
 
     respond_with(@delivery_contents)
-  end
-
-  def show
-    respond_with(@delivery_content)
   end
 
   def new
@@ -45,6 +41,6 @@ class DeliveryContentsController < ApplicationController
   end
 
   def delivery_content_params
-    params.require(:delivery_content).permit(:group_id, :medium_id, :action_url)
+    params.require(:delivery_content).permit(:group_id, :medium_id, :title, :action_url)
   end
 end

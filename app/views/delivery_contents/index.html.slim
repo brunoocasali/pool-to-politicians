@@ -10,6 +10,7 @@ table.table
     tr
       th = ta(DeliveryContent, :medium)
       th = ta(DeliveryContent, :group)
+      th = ta(DeliveryContent, :title)
       th = ta(DeliveryContent, :action_url)
       th(colspan="2")
 
@@ -18,7 +19,8 @@ table.table
       tr
         td(width=1) = image_tag delivery_content.medium.filename.thumb.url
         td = delivery_content.group.name
-        td = delivery_content.action_url
+        td = delivery_content.title
+        td = link_to delivery_content.action_url, delivery_content.action_url, target: '_blank'
         td(width=1) = link_to t('edit_btn'), edit_delivery_content_path(delivery_content)
         td(width=1) = link_to t('destroy'), delivery_content, data: { confirm: 'Você tem certeza?' }, method: :delete
 

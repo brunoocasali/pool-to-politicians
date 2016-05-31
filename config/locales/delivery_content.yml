@@ -2,10 +2,11 @@ pt-BR:
   activerecord:
     models:
       delivery_content:
-        one: Conteúdo para Entrega
-        other: Conteúdos de Entregas
+        one: Conteúdo para Envio
+        other: Conteúdos de Envios
     attributes:
       delivery_content:
         medium: Mídia
+        title: Título do Conteúdo
         action_url: URL de ação
         group: Grupo Administrador

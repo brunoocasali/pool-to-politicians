@@ -1,8 +1,6 @@
-h1 Editing delivery_content
+h2
+ = t('edit', m: tm(DeliveryContent))
+ = link_to t('back'), delivery_contents_path, class: 'btn btn-default pull-right'
+ = link_to t('show_btn'), @delivery_content, class: 'btn btn-primary pull-right'
 
 == render 'form'
-
-= link_to 'Show', @delivery_content
-'|
-= link_to 'Back', delivery_contents_path
-

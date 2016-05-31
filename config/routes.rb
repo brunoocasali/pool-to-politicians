@@ -8,8 +8,11 @@ Rails.application.routes.draw do
     root 'welcome#index', as: :authenticated_root
   end
 
+  resources :deliveries do
+    get :find_cities, on: :collection
+  end
+
   resources :configurations
-  resources :deliveries
   resources :delivery_contents
   resources :groups
   resources :leads

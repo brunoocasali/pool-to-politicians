@@ -1,5 +1,5 @@
 pt-BR:
-  activerecord:
+  activemodel:
     models:
       delivery:
         one: Envio
