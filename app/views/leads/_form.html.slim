@@ -8,11 +8,9 @@
       .form-group.col-sm-6
         = f.input :email
     .row
-      .form-group.col-sm-4
-        = f.input :city
-      .form-group.col-sm-4
-        = f.input :state
-      .form-group.col-sm-4
+      .form-group.col-sm-6
+        = f.association :city
+      .form-group.col-sm-6
         = f.input :country
 
     .row

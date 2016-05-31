@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :deliveries do
     get :find_cities, on: :collection
+    post :preview, on: :collection
   end
 
   resources :configurations

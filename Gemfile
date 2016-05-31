@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.0'
+ruby '2.3.1'
 
 gem 'rails', '4.2.6'
 gem 'pg', '~> 0.15'
@@ -24,6 +24,9 @@ gem 'wow-rails'
 gem 'fittextjs_rails'
 gem 'compass-rails'
 gem 'image-picker-rails'
+
+gem 'delayed_job_active_record'
+gem 'progress_job'
 
 gem 'kaminari'
 

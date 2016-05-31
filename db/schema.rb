@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531040710) do
+ActiveRecord::Schema.define(version: 20160531105545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,25 @@ ActiveRecord::Schema.define(version: 20160531040710) do
   end
 
   add_index "configurations", ["plan_id"], name: "index_configurations_on_plan_id", using: :btree
+
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer  "priority",         default: 0, null: false
+    t.integer  "attempts",         default: 0, null: false
+    t.text     "handler",                      null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "progress_stage"
+    t.integer  "progress_current", default: 0
+    t.integer  "progress_max",     default: 0
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "delivery_contents", force: :cascade do |t|
     t.integer  "group_id"
@@ -66,8 +85,10 @@ ActiveRecord::Schema.define(version: 20160531040710) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "group_id"
+    t.integer  "city_id"
   end
 
+  add_index "leads", ["city_id"], name: "index_leads_on_city_id", using: :btree
   add_index "leads", ["group_id"], name: "index_leads_on_group_id", using: :btree
   add_index "leads", ["status"], name: "index_leads_on_status", using: :btree
 
@@ -117,5 +138,6 @@ ActiveRecord::Schema.define(version: 20160531040710) do
   add_foreign_key "delivery_contents", "groups"
   add_foreign_key "delivery_contents", "media"
   add_foreign_key "groups", "configurations"
+  add_foreign_key "leads", "cities"
   add_foreign_key "leads", "groups"
 end

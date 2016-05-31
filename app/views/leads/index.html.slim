@@ -20,11 +20,11 @@ table.table
   tbody
     - @leads.each do |lead|
       tr
-        td = lead.name
+        td = lead.name || 'S/N'
         td = lead.email
         td = lead.phone
         td = lead.city
-        td = lead.state
+        td = lead.city.state
         td = lead.country
         td = lead.status_humanize
         td = link_to t('show_btn'), lead

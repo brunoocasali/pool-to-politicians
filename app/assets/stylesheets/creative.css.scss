@@ -131,7 +131,7 @@ aside {
     background-color: transparent;
 
     .navbar-header .navbar-brand {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 255);
 
       &:hover, &:focus {
         color: #fff;
@@ -139,10 +139,10 @@ aside {
     }
 
     .nav > li > a {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 255);
 
       &:focus {
-        color: rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 255);
       }
 
       &:hover, &:focus:hover {

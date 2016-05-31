@@ -1,0 +1,12 @@
+span.glyphicon.glyphicon-question-sign(style="cursor: help" aria-hidden="true" title='Este é um preview do email que será enviado. Clique em "disparar emails" para enviar.')
+
+h2.text-center(style="font-size: 3.7em; text-transform: uppercase;" id="opaa")
+  - if @delivery.leads.empty?
+    = 'Nenhuma pessoa selecionada'
+  - elsif @delivery.leads.size == 1
+    = 'Uma pessoa selecionada'
+  - else
+    = raw("#{number_with_delimiter(@delivery.leads.size)} pessoas <br> selecionadas")
+
+= link_to @delivery.use_delivery_content.action_url, target: '_blank', title: 'Visitar Link' do
+  = image_tag @delivery.medium.filename_url, class: 'img-responsive center-block img-thumbnail'

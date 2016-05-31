@@ -86,6 +86,11 @@ GEM
       countries (~> 1.2.0)
       sort_alphabetical (~> 1.0)
     currencies (0.4.2)
+    delayed_job (4.1.2)
+      activesupport (>= 3.0, < 5.1)
+    delayed_job_active_record (4.1.1)
+      activerecord (>= 3.0, < 5.1)
+      delayed_job (>= 3.0, < 5)
     devise (3.5.8)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -148,6 +153,8 @@ GEM
       rack
       rake (>= 0.8.1)
     pg (0.18.4)
+    progress_job (0.0.4)
+      delayed_job
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -255,6 +262,7 @@ DEPENDENCIES
   coffee-rails
   compass-rails
   country_select
+  delayed_job_active_record
   devise
   devise-bootstrap-views
   devise-i18n
@@ -269,6 +277,7 @@ DEPENDENCIES
   mini_magick
   passenger
   pg (~> 0.15)
+  progress_job
   pry-rails
   quiet_assets
   rails (= 4.2.6)

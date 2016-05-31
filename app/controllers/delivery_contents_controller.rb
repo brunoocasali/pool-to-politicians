@@ -19,13 +19,13 @@ class DeliveryContentsController < ApplicationController
     @delivery_content = DeliveryContent.new(delivery_content_params)
     @delivery_content.save
 
-    respond_with(@delivery_content)
+    respond_with(@delivery_contents, location: delivery_contents_path)
   end
 
   def update
     @delivery_content.update(delivery_content_params)
 
-    respond_with(@delivery_content)
+    respond_with(@delivery_contents, location: delivery_contents_path)
   end
 
   def destroy

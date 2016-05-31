@@ -1,28 +1,29 @@
-h1
+h2
   = t('show', m: tm(Lead), id: @lead.id)
 br
 
 p
-  strong Name:
-  = @lead.name
+  strong
+  = "#{ta(Lead, :name)}: #{@lead.name}"
 p
-  strong Email:
-  = @lead.email
+  strong
+  = "#{ta(Lead, :email)}: #{@lead.email}"
 p
-  strong Phone:
-  = @lead.phone
+  strong
+  = "#{ta(Lead, :phone)}: #{@lead.phone}"
 p
-  strong City:
-  = @lead.city
+  strong
+  = "#{ta(Lead, :city)}: #{@lead.city}"
 p
-  strong State:
-  = @lead.state
+  strong
+  = "#{ta(Lead, :state)}#{@lead.city.state}"
 p
-  strong Country:
-  = @lead.country
+  strong
+  = "#{ta(Lead, :country)}: #{@lead.country}"
 p
-  strong Status:
-  = @lead.status
+  strong
+  = "#{ta(Lead, :status)}: #{@lead.status_humanize}"
 
 = link_to t('edit', m: tm(Lead)), edit_lead_path(@lead), class: 'btn btn-primary'
+| &nbsp;
 = link_to t('back'), leads_path, class: 'btn btn-default'

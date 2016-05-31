@@ -9,16 +9,23 @@ class DeliveriesController < ApplicationController
     respond_with(cities)
   end
 
+  def preview
+    @delivery = DeliveryForm.new(delivery_params)
+    @delivery.calc_values
+
+    respond_with(@delivery, location: deliveries_path)
+  end
+
   def create
     @delivery = DeliveryForm.new(delivery_params)
-    # @delivery.create
+    @delivery.calc_values
 
-    respond_with(@delivery)
+    @job = Delayed::Job.enqueue MailerJob.new(@delivery, @delivery.leads.count)
   end
 
   private
 
   def delivery_params
-    params.require(:delivery).permit(:state, :city)
+    params.require(:delivery).permit(:state, :city, :delivery_content)
   end
 end
