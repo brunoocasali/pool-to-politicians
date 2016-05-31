@@ -12,6 +12,7 @@ gem 'simple_form'
 gem 'slim-rails'
 
 gem 'country_select'
+gem 'filterrific'
 
 gem 'quiet_assets'
 gem 'bootstrap-sass', '3.1.0'

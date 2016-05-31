@@ -100,6 +100,8 @@ GEM
     erubis (2.7.0)
     execjs (2.6.0)
     ffi (1.9.10)
+    filterrific (2.0.5)
+      rails (>= 3.1.0)
     fittextjs_rails (1.2.0.1)
       railties (>= 3.1)
     font-awesome-rails (4.6.2.0)
@@ -257,6 +259,7 @@ DEPENDENCIES
   devise-bootstrap-views
   devise-i18n
   enumerate_it
+  filterrific
   fittextjs_rails
   font-awesome-rails
   image-picker-rails

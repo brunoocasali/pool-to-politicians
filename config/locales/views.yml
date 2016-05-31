@@ -14,5 +14,8 @@ pt-BR:
   plan:
     title: 'Planos'
 
+  deliveries:
+    title: 'Envios'
+
   welcome:
     title: 'Bem-Vindo(a)!'
