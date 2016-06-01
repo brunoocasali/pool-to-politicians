@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     root 'welcome#index', as: :authenticated_root
   end
 
-  resources :deliveries do
+  resources :deliveries, only: [:create, :new] do
     get :find_cities, on: :collection
     post :preview, on: :collection
   end

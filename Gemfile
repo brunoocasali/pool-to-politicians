@@ -26,7 +26,6 @@ gem 'compass-rails'
 gem 'image-picker-rails'
 
 gem 'delayed_job_active_record'
-gem 'progress_job'
 
 gem 'kaminari'
 

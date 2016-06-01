@@ -1,0 +1,21 @@
+= simple_form_for(@delivery, action: :create, url: deliveries_path) do |f|
+  h2
+    = t('new', m: 'Envio')
+    = f.button :submit, 'Disparar Emails', class: 'btn btn-success pull-right', remote: true, disabled: true, id: 'buton_submit'
+
+  = f.error_notification
+
+  .form-inputs
+    .row
+      .form-group.col-sm-12
+        = f.input :delivery_content, as: :select, collection: DeliveryContent.all
+    .row
+      .form-group.col-sm-6
+        = f.input :state, as: :select, collection: State.all, include_blank: 'Selecione Conteúdo antes!', input_html: { id: 'states_select', disabled: true }
+      .form-group.col-sm-6
+        = f.input :city, as: :select, collection: [], include_blank: 'Selecione um Estado antes!', input_html: { id: 'cities_select', disabled: true }
+
+    .row
+      .col-sm-12
+        = f.error :leads
+        #content

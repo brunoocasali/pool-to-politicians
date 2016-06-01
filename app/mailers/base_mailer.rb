@@ -1,10 +1,9 @@
 class BaseMailer < ApplicationMailer
   default from: 'no-reply@pooliticos.com'
 
-  def just_email(delivery, user)
+  def just_email(delivery, leads)
     @delivery = delivery
-    @user = user
 
-    mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+    mail(to: leads.map(&:email), subject: @delivery.subject)
   end
 end

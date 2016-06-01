@@ -5,6 +5,7 @@ class DeliveryForm
   attr_accessor :state, :city, :delivery_content, :leads
 
   validates :state, :city, :delivery_content, presence: true
+  validates :leads, length: { minimum: 1, message: 'deve possuir no mínimo 1 lead selecionado.' }
 
   def initialize(params = {})
     super(params)
