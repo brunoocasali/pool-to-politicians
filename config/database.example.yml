@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  username: 'myuser'
+  password: 'mypass'
+
+development:
+  <<: *default
+  database: pooliticos_development
+
+test:
+  <<: *default
+  database: pooliticos_test
